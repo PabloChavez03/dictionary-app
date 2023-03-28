@@ -1,0 +1,15 @@
+:root {
+  --background-color: #a9a9a9;
+  --purple-color-hard: #A546F1;
+  --purple-color-medium: #9851CB;
+  --purple-color-soft: #B596CD;
+  --platinum-color-soft: #DDDDDD;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-color);
+}
