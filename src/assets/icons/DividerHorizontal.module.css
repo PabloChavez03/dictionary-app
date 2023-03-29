@@ -1,0 +1,6 @@
+.divider {
+  background-color: black;
+  height: .01rem;
+  width: 90%;
+  opacity: .1;
+}
