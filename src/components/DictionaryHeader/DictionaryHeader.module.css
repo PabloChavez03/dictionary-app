@@ -1,0 +1,30 @@
+.dictionaryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.keyboardAndSpan {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: .5rem;
+}
+
+.keyboardAndSpan h1 {
+  font-size: 3.5rem;
+}
+
+.keyboardAndSpan span {
+  color: var(--purple-color-medium);
+  font-size: 1.25rem;
+}
+
+.playButton {
+  color: var(--purple-color-hard);
+  background-color: var(--purple-color-soft);
+  border: none;
+  padding: 1.5rem;
+  border-radius: 100%;
+  cursor: pointer;
+}

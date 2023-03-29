@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer span {
+  color: rgb(100, 100, 100);
+  font-size: 1rem;
+}
+
+.footer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--purple-color-hard);
+}

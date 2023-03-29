@@ -1,0 +1,11 @@
+.dictionaryDivider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dictionaryDivider strong {
+  font-size: 1.19rem;
+  font-style: italic;
+  margin-right: .7rem;
+}

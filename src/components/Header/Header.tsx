@@ -1,11 +1,18 @@
+import { useState } from 'react'
 import styles from './Header.module.css'
-import Dictionary from '../assets/icons/Dictionary'
-import DividerVertical from '../assets/icons/DividerVertical'
-import Arrow from '../assets/icons/Arrow'
-import Moon from '../assets/icons/Moon'
-import Search from '../assets/icons/Search'
+import Dictionary from '../../assets/icons/Dictionary'
+import DividerVertical from '../../assets/icons/DividerVertical'
+import Arrow from '../../assets/icons/Arrow'
+import Moon from '../../assets/icons/Moon'
+import Search from '../../assets/icons/Search'
 
 const Header = (): JSX.Element => {
+  const [font, setFont] = useState({
+    serif: 'serif',
+    sansSerif: 'sans-serif',
+    monospace: 'monospace'
+  })
+  //
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
