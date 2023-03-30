@@ -7,7 +7,7 @@ const Dictionary = (): JSX.Element => {
       height="44"
       viewBox="0 0 24 24"
       strokeWidth="1.5"
-      stroke="#2c3e50"
+      stroke="currentColor"
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"

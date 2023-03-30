@@ -1,9 +1,14 @@
 .main {
-  margin: 2rem auto;
+  margin: 0 auto;
   display: flex;
+  padding: 2rem 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 3rem;
 }
 
+.dark {
+  background-color: rgb(15 23 42);
+  color: white;
+}
