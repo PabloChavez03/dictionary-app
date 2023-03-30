@@ -5,6 +5,9 @@ import DividerVertical from '../../assets/icons/DividerVertical'
 import Arrow from '../../assets/icons/Arrow'
 import Moon from '../../assets/icons/Moon'
 import Search from '../../assets/icons/Search'
+import Toggle from './Toggle'
+import { useThemeProvider } from '../../contexts/ThemeContext'
+import Sun from '../../assets/icons/Sun'
 
 interface Props {
   searchWord: (word: string) => void
@@ -18,6 +21,7 @@ const Header = ({ searchWord }: Props): JSX.Element => {
   // })
 
   const [searchInput, setSearchInput] = useState('')
+  const { isDark } = useThemeProvider()
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
     const value = evt.target.value
@@ -39,7 +43,8 @@ const Header = ({ searchWord }: Props): JSX.Element => {
           </div>
           <DividerVertical />
           <div className={styles.toggleMoon}>
-            <strong>toggle</strong> <Moon />
+            <Toggle />
+            {isDark ? <Moon /> : <Sun />}
           </div>
         </div>
       </div>

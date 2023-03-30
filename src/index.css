@@ -13,3 +13,10 @@
 body {
   background-color: var(--background-color);
 }
+
+/* @media (prefers-color-scheme: light) {
+  body {
+    background-color: rgb(15 23 42);
+    color:white;
+  }
+} */
