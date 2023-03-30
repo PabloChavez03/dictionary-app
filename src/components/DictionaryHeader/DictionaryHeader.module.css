@@ -28,3 +28,13 @@
   border-radius: 100%;
   cursor: pointer;
 }
+
+.playButtonDisabled {
+  color: var(--purple-color-hard);
+  background-color: var(--purple-color-soft);
+  border: none;
+  padding: 1.5rem;
+  border-radius: 100%;
+  cursor: pointer;
+  opacity: .4;
+}

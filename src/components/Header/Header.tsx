@@ -6,12 +6,28 @@ import Arrow from '../../assets/icons/Arrow'
 import Moon from '../../assets/icons/Moon'
 import Search from '../../assets/icons/Search'
 
-const Header = (): JSX.Element => {
-  const [font, setFont] = useState({
-    serif: 'serif',
-    sansSerif: 'sans-serif',
-    monospace: 'monospace'
-  })
+interface Props {
+  searchWord: (word: string) => void
+}
+
+const Header = ({ searchWord }: Props): JSX.Element => {
+  // const [font, setFont] = useState({
+  //   serif: 'serif',
+  //   sansSerif: 'ssans-serif',
+  //   monospace: 'monospace'
+  // })
+
+  const [searchInput, setSearchInput] = useState('')
+
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
+    const value = evt.target.value
+    setSearchInput(value)
+  }
+
+  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>, word: string): void => {
+    evt.preventDefault()
+    searchWord(word)
+  }
   //
   return (
     <header className={styles.header}>
@@ -27,10 +43,12 @@ const Header = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className={styles.searchContainer}>
-        <input type="text" placeholder="keyword" />
-        <Search size={20}/>
-      </div>
+      <form className={styles.searchContainer} onSubmit={(evt) => { handleSubmit(evt, searchInput) }}>
+        <input type="text" placeholder="keyword" onChange={handleChange}/>
+        <button>
+          <Search size={20} />
+        </button>
+      </form>
     </header>
   )
 }

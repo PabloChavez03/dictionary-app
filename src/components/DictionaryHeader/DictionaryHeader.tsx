@@ -4,26 +4,25 @@ import styles from './DictionaryHeader.module.css'
 
 interface Props {
   word: WordProperties['word']
-  phonetics: Phonetic
+  phonetics?: Phonetic
 }
 
 const DictionaryHeader = ({ phonetics, word }: Props): JSX.Element => {
-  const { audio, text } = phonetics
-
   const handleAudio = async (): Promise<void> => {
-    const audioElement = new Audio(audio)
+    const audioElement = new Audio(phonetics?.audio)
     await audioElement.play()
   }
   return (
     <div className={styles.dictionaryHeader}>
       <div className={styles.keyboardAndSpan}>
         <h1>{word}</h1>
-        <span>{text}</span>
+        {phonetics?.text !== undefined && <span>{phonetics?.text}</span>}
       </div>
       <div className={styles.playButtonContainer}>
         <button
-          className={styles.playButton}
+          className={phonetics?.audio !== undefined ? styles.playButton : styles.playButtonDisabled}
           onClick={handleAudio}
+          disabled={phonetics?.audio === undefined}
         >
           <Play size={32} />
         </button>

@@ -9,7 +9,7 @@ interface Props {
 const DictionaryBody = ({ meanings }: Props): JSX.Element => {
   return (
     <>
-      {meanings.map((meaning) => (
+      {meanings?.map((meaning) => (
         <div className={styles.dictionaryBody} key={meaning.partOfSpeech}>
           <DictionaryDivider text={meaning.partOfSpeech} />
           <div className={styles.meaningStyle}>

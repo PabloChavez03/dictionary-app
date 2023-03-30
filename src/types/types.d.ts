@@ -27,8 +27,12 @@ export interface Meaning {
 export interface WordProperties {
   word: string
   phonetic?: string
-  phonetics: Phonetic[]
+  phonetics?: Phonetic[]
   meanings: Meaning[]
   license?: License
   sourceUrls?: string[]
+}
+
+export interface ResponseSearch {
+  wordResult: WordProperties[]
 }

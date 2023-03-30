@@ -48,9 +48,12 @@
   outline: none;
 }
 
-.searchContainer svg {
+.searchContainer button {
   display: block;
   position: absolute;
+  background: none;
+  border: none;
   top: .8rem;
   right: .8rem;
+  cursor: pointer;
 }
