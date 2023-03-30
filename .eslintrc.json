@@ -20,7 +20,7 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/no-misused-promises": "off",
-        "@typescript-eslint/promise-function-async": "on"
+        "@typescript-eslint/promise-function-async": "off",
+        "@typescript-eslint/no-misused-promises": "off"
     }
 }
