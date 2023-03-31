@@ -11,4 +11,9 @@
 .dark {
   background-color: rgb(15 23 42);
   color: white;
+  transition: background-color .3s ease-out;
+}
+
+:not(dark) {
+  transition: background-color .3s ease-out;
 }
