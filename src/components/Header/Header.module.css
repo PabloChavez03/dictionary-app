@@ -39,7 +39,7 @@
 .searchContainer input {
   padding: 1rem 0 1rem 1rem;
   width: 100%;
-  border-radius: 1rem;
+  border-radius: .6rem;
   border: none;
   background-color: #d9d9d9;
 }

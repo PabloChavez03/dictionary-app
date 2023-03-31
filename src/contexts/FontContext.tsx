@@ -1,29 +1,35 @@
 import { useState, createContext, useContext } from 'react'
+import { type FontValue } from '../constants/FontValue'
 
 interface Props {
   children: React.ReactNode
 }
 
 // tengo que hacer las fuentes
-interface FontProps {
-  isDark: boolean
-  changeTheme: (value: boolean) => void
+
+interface FontValues {
+  fontFamily: keyof typeof FontValue
 }
-export const FontCTX = createContext<FontProps>({
-  isDark: false,
-  changeTheme: () => {}
+interface FontType {
+  fontFamily: FontValues['fontFamily']
+  changeFont: (value: FontValues['fontFamily']) => void
+}
+export const FontCTX = createContext<FontType>({
+  fontFamily: 'sans',
+  changeFont: () => {}
 })
 
 export function FontContext ({ children }: Props): JSX.Element {
-  const [isDark, setTheme] = useState(false)
+  const [fontFamily, setFont] = useState<FontValues['fontFamily']>('sans')
+
   return (
-    <FontCTX.Provider value={{ isDark, changeTheme: setTheme }}>
+    <FontCTX.Provider value={{ fontFamily, changeFont: setFont }}>
       {children}
     </FontCTX.Provider>
   )
 }
 
-export function useFontContext (): FontProps {
+export function useFontProvider (): FontType {
   const context = useContext(FontCTX)
   if (context === undefined) {
     throw new Error('useFontContext debería estar dentro de FontContext')

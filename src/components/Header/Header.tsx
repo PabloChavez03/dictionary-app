@@ -7,7 +7,9 @@ import Moon from '../../assets/icons/Moon'
 import Search from '../../assets/icons/Search'
 import Toggle from './Toggle'
 import { useThemeProvider } from '../../contexts/ThemeContext'
+import { useFontProvider } from '../../contexts/FontContext'
 import Sun from '../../assets/icons/Sun'
+import Font from './Font'
 
 interface Props {
   searchWord: (word: string) => void
@@ -22,6 +24,8 @@ const Header = ({ searchWord }: Props): JSX.Element => {
 
   const [searchInput, setSearchInput] = useState('')
   const { isDark } = useThemeProvider()
+  const { fontFamily } = useFontProvider()
+  console.log(fontFamily)
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
     const value = evt.target.value
@@ -39,7 +43,7 @@ const Header = ({ searchWord }: Props): JSX.Element => {
         <Dictionary />
         <div className={styles.fontToggleContainer}>
           <div className={styles.fontArrow}>
-            <strong>font</strong> <Arrow />
+            <Font /> <Arrow size={17}/>
           </div>
           <DividerVertical />
           <div className={styles.toggleMoon}>
