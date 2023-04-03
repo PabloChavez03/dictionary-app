@@ -8,8 +8,12 @@ import { useThemeProvider } from './contexts/ThemeContext'
 import { useFontProvider } from './contexts/FontContext'
 
 function App (): JSX.Element {
-  const [wordBySearch, setWordBySearch] = useState('hello')
+  const [wordBySearch, setWordBySearch] = useState(() => {
+    const wordBySearchLocalStorage = window.localStorage.getItem('word')
+    return wordBySearchLocalStorage !== null ? JSON.parse(wordBySearchLocalStorage) : 'hello'
+  })
   const [loading, setLoading] = useState(true)
+  window.localStorage.setItem('word', JSON.stringify(wordBySearch))
 
   const { wordSearch } = useWord({ wordBySearch, setLoading })
   const { isDark } = useThemeProvider()

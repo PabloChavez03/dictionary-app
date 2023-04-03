@@ -20,7 +20,12 @@ export const FontCTX = createContext<FontType>({
 })
 
 export function FontProvider ({ children }: Props): JSX.Element {
-  const [fontFamily, setFont] = useState<FontValues['fontFamily']>('serif')
+  const [fontFamily, setFont] = useState<FontValues['fontFamily']>(() => {
+    const fontFamilyLocalStorage = window.localStorage.getItem('font')
+    return fontFamilyLocalStorage !== null ? JSON.parse(fontFamilyLocalStorage) : 'serif'
+  })
+
+  window.localStorage.setItem('font', JSON.stringify(fontFamily))
 
   return (
     <FontCTX.Provider value={{ fontFamily, changeFont: setFont }}>

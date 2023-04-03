@@ -108,7 +108,10 @@ const initialStateByWordResult: WordProperties = {
 }
 
 export function useWord ({ wordBySearch, setLoading }: Props): StateWordProperties {
-  const [wordResult, setWordResult] = useState<WordProperties>(initialStateByWordResult)
+  const [wordResult, setWordResult] = useState<WordProperties>(() => {
+    const wordResultLocalStorage = window.localStorage.getItem('results')
+    return wordResultLocalStorage !== null ? JSON.parse(wordResultLocalStorage) : initialStateByWordResult
+  })
 
   useEffect(() => {
     fetch(`${API_DICTIONARY}${wordBySearch}`)
@@ -131,6 +134,8 @@ export function useWord ({ wordBySearch, setLoading }: Props): StateWordProperti
   }, [wordBySearch])
 
   const wordSearch = adapterApi(wordResult)
+
+  window.localStorage.setItem('results', JSON.stringify(wordSearch))
 
   return {
     wordSearch
