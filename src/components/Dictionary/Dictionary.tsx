@@ -5,7 +5,7 @@ import DictionaryHeader from '../DictionaryHeader/DictionaryHeader'
 import DictionaryBody from '../DictionaryBody/DictionaryBody'
 import DictionaryFooter from '../DictionaryFooter/DictionaryFooter'
 import Loader from '../Loader/Loader'
-import Error404 from '../Error/Error404'
+import NotFound from '../NotFound/NotFound'
 
 interface Props {
   wordSearch: WordProperties
@@ -20,26 +20,26 @@ const Dictionary = ({ wordSearch, loading }: Props): JSX.Element => {
   const meaningsSlice = meanings?.slice(0, 2)
 
   return (
-    <section className={styles.section}>
+    <>
       {loading
         ? (
         <Loader />
           )
-        : !Array.isArray(wordSearch)
-            ? (
-        <>
+        : wordSearch.word === undefined
+          ? (
+        <NotFound />
+            )
+          : (
+        <section className={styles.section}>
           <main className={styles.main}>
             <DictionaryHeader word={word} phonetics={phoneticsComplete} />
             <DictionaryBody meanings={meaningsSlice} />
           </main>
           <DictionaryDivider />
           <DictionaryFooter sources={sourceUrls} />
-        </>
-              )
-            : (
-        <Error404 />
-              )}
-    </section>
+        </section>
+            )}
+    </>
   )
 }
 
