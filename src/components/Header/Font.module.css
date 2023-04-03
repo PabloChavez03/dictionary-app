@@ -28,7 +28,7 @@
 }
 
 .fontList li:hover {
-  color: var(--purple-color-soft);
+  color:#BA9BCC;
 }
 
 .fontContainer:hover > .fontList {
