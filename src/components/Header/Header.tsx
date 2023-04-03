@@ -5,10 +5,11 @@ import DividerVertical from '../../assets/icons/DividerVertical'
 import Arrow from '../../assets/icons/Arrow'
 import Moon from '../../assets/icons/Moon'
 import Search from '../../assets/icons/Search'
-import Toggle from './Toggle'
+import Toggle from './Toggle/Toggle'
 import { useThemeProvider } from '../../contexts/ThemeContext'
 import Sun from '../../assets/icons/Sun'
 import Font from './Font'
+import { useFontProvider } from '../../contexts/FontContext'
 
 interface Props {
   searchWord: (word: string) => void
@@ -17,6 +18,12 @@ interface Props {
 const Header = ({ searchWord }: Props): JSX.Element => {
   const [searchInput, setSearchInput] = useState('')
   const { isDark } = useThemeProvider()
+  const { fontFamily: font } = useFontProvider()
+  const tempCss = {
+    serif: 'serif',
+    sansSerif: 'sans-serif',
+    mono: 'monospace'
+  }
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
     const value = evt.target.value
@@ -43,8 +50,8 @@ const Header = ({ searchWord }: Props): JSX.Element => {
           </div>
         </div>
       </div>
-      <form className={styles.searchContainer} onSubmit={(evt) => { handleSubmit(evt, searchInput) }}>
-        <input type="text" placeholder="keyword" onChange={handleChange} required/>
+      <form className={`${styles.searchContainer}`} onSubmit={(evt) => { handleSubmit(evt, searchInput) }}>
+        <input type="text" placeholder="keyword" onChange={handleChange} style={{ fontFamily: tempCss[font] }} required/>
         <button>
           <Search size={20} />
         </button>
