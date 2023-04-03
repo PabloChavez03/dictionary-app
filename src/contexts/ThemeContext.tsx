@@ -13,7 +13,12 @@ export const ThemeCTX = createContext<ThemeProps>({
 })
 
 export function ThemeProvider ({ children }: Props): JSX.Element {
-  const [isDark, setTheme] = useState(false)
+  const [isDark, setTheme] = useState(() => {
+    const themeStorage = window.localStorage.getItem('theme')
+    return themeStorage !== null ? JSON.parse(themeStorage) : false
+  })
+
+  window.localStorage.setItem('theme', JSON.stringify(isDark))
   return (
     <ThemeCTX.Provider value={{ isDark, changeTheme: setTheme }}>
       {children}
