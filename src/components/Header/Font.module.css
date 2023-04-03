@@ -1,0 +1,30 @@
+.fontContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.fontHeading {
+  font-size: 1.2rem;
+}
+
+.fontList {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  position: absolute;
+  top: 18px;
+  left: 0;
+  padding-left: 0;
+  padding: 10px 0;
+  font-size: 1rem;
+}
+
+.fontList li {
+  list-style: none;
+}
+
+.fontContainer:hover > .fontList {
+  display: flex;
+}

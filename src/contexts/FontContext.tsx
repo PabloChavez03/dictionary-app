@@ -15,12 +15,12 @@ interface FontType {
   changeFont: (value: FontValues['fontFamily']) => void
 }
 export const FontCTX = createContext<FontType>({
-  fontFamily: 'sans',
+  fontFamily: 'serif',
   changeFont: () => {}
 })
 
-export function FontContext ({ children }: Props): JSX.Element {
-  const [fontFamily, setFont] = useState<FontValues['fontFamily']>('sans')
+export function FontProvider ({ children }: Props): JSX.Element {
+  const [fontFamily, setFont] = useState<FontValues['fontFamily']>('serif')
 
   return (
     <FontCTX.Provider value={{ fontFamily, changeFont: setFont }}>
@@ -32,7 +32,7 @@ export function FontContext ({ children }: Props): JSX.Element {
 export function useFontProvider (): FontType {
   const context = useContext(FontCTX)
   if (context === undefined) {
-    throw new Error('useFontContext debería estar dentro de FontContext')
+    throw new Error('useFontProvider debería estar dentro de FontProvider')
   }
 
   return context

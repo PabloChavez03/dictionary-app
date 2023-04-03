@@ -1,31 +1,34 @@
 // import { useState } from 'react'
-// import { FontValue } from '../../constants/FontValue'
+import { useFontProvider } from '../../contexts/FontContext'
+import { type FontValue } from '../../constants/FontValue'
+import styles from './Font.module.css'
 
-// const initialState = [{
-//   label: 'Sans',
-//   value: FontValue.sans
-// }, {
-//   label: 'Sans-Serif',
-//   value: FontValue.sansSerif
-// }, {
-//   label: 'Monospace',
-//   value: FontValue.mono
-// }]
-
-// tengo que poder setear la fuente para toda la pagina y la vez poder mostrar una lista de las letras para poder mostrarlas. Con un select seria mucho mas facil pero por lo que he visto no se puede personalizar, así que toca hacer uno a manopla
+const fonts: Array<{ label: string, value: keyof typeof FontValue }> = [
+  {
+    label: 'Serif',
+    value: 'serif'
+  },
+  {
+    label: 'Sans-Serif',
+    value: 'sansSerif'
+  },
+  {
+    label: 'Monospace',
+    value: 'mono'
+  }
+]
 
 const Font = (): JSX.Element => {
-  // const [fonts, setFonts] = useState(initialState)
+  const { fontFamily, changeFont } = useFontProvider()
+  const currentFont = fonts.find((font) => font.value === fontFamily)
+  const othersFont = fonts.filter((font) => font.value !== fontFamily)
 
-  const handleClick = (evt: React.MouseEvent<HTMLUListElement>): void => {
-    console.log(evt.target)
-  }
   return (
-    <div>
-      <strong>Sans</strong>
-      <ul onClick={handleClick}>
-        <li value='hola'>Sans Serif</li>
-        <li value='hola2'>Mono</li>
+    <div className={styles.fontContainer}>
+      <h1 className={styles.fontHeading}>{currentFont?.label}</h1>
+      <ul className={styles.fontList}>
+        {othersFont.length !== 0 &&
+          othersFont.map((el) => <li key={el.value} onClick={() => { changeFont(el.value) }}>{el.label}</li>)}
       </ul>
     </div>
   )

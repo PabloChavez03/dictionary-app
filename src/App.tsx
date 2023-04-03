@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 // import results from './mocks/WithResults.json'
 import { useWord } from './hooks/useWord'
 import { useThemeProvider } from './contexts/ThemeContext'
+import { useFontProvider } from './contexts/FontContext'
 
 function App (): JSX.Element {
   const [wordBySearch, setWordBySearch] = useState('hello')
@@ -12,8 +13,10 @@ function App (): JSX.Element {
 
   const { wordSearch } = useWord({ wordBySearch, setLoading })
   const { isDark } = useThemeProvider()
+  const { fontFamily } = useFontProvider()
 
-  const className = isDark ? `${styles.main} ${styles.dark}` : `${styles.main}`
+  let className = isDark ? `${styles.main} ${styles.dark}` : `${styles.main}`
+  className += ` ${styles[fontFamily]}`
 
   return (
     <main className={className}>
