@@ -7,7 +7,6 @@ import Moon from '../../assets/icons/Moon'
 import Search from '../../assets/icons/Search'
 import Toggle from './Toggle'
 import { useThemeProvider } from '../../contexts/ThemeContext'
-import { useFontProvider } from '../../contexts/FontContext'
 import Sun from '../../assets/icons/Sun'
 import Font from './Font'
 
@@ -16,16 +15,8 @@ interface Props {
 }
 
 const Header = ({ searchWord }: Props): JSX.Element => {
-  // const [font, setFont] = useState({
-  //   serif: 'serif',
-  //   sansSerif: 'ssans-serif',
-  //   monospace: 'monospace'
-  // })
-
   const [searchInput, setSearchInput] = useState('')
   const { isDark } = useThemeProvider()
-  const { fontFamily } = useFontProvider()
-  console.log(fontFamily)
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
     const value = evt.target.value
@@ -53,7 +44,7 @@ const Header = ({ searchWord }: Props): JSX.Element => {
         </div>
       </div>
       <form className={styles.searchContainer} onSubmit={(evt) => { handleSubmit(evt, searchInput) }}>
-        <input type="text" placeholder="keyword" onChange={handleChange}/>
+        <input type="text" placeholder="keyword" onChange={handleChange} required/>
         <button>
           <Search size={20} />
         </button>
