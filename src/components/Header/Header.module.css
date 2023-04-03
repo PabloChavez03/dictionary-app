@@ -52,6 +52,7 @@
 
 .searchContainer input:focus {
   outline: none;
+  background-color: white;
 }
 
 .searchContainer button {
