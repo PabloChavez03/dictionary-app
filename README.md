@@ -22,9 +22,9 @@ __Sus usuarios deberían poder:__
 - [x] Reproduzca el archivo de audio por una palabra cuando esté disponible
 - [x] Cambiar entre serif, sans serif y fuentes monoespaciales
 - [x] Cambiar entre temas claros y oscuros
-- [ ] Consulte un mensaje de validación de formulario cuando intente enviar un formulario en blanco (con React)
-- [ ] Pantalla cuando no se encuentra una palabra.
-- [ ] Pantalla cuando hay un error.
+- [x] Consulte un mensaje de validación de formulario cuando intente enviar un formulario en blanco (con React)
+- [x] Pantalla cuando no se encuentra una palabra.
+- [x] Pantalla cuando hay un error.
 - [ ] Vea el diseño óptimo para la interfaz según el tamaño de pantalla de su dispositivo
 - [ ] Vea los estados de desplazamiento y enfoque para todos los elementos interactivos en la página
 - [ ] Bonificación: Elija el esquema de color correcto para ellos en función de sus preferencias informáticas. Sugerencia: Investigación prefers-color-scheme en CSS.
