@@ -38,3 +38,35 @@
   cursor: pointer;
   opacity: .4;
 }
+
+@media screen and (max-width: 399px) {
+  .keyboardAndSpan h1 {
+    font-size: 2.5rem;
+  }
+
+  .keyboardAndSpan span {
+    color: var(--purple-color-hard);
+    font-size: 1.2rem;
+  }
+
+  .playButton {
+    color: var(--purple-color-hard);
+    background-color: var(--purple-color-soft);
+    border: none;
+    padding: .8rem;
+    border-radius: 100%;
+    cursor: pointer;
+    margin-top: 11px;
+  }
+
+  .playButtonDisabled {
+    color: var(--purple-color-hard);
+    background-color: var(--purple-color-soft);
+    border: none;
+    padding: .8rem;
+    border-radius: 100%;
+    cursor: pointer;
+    opacity: .4;
+    margin-top: 11px;
+  }
+}

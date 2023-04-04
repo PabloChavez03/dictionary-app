@@ -11,3 +11,28 @@
   flex-direction: column;
   gap: 2.5rem;
 }
+
+@media screen and (max-width: 800px){
+  .section {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 88%;
+    margin: 0 auto;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
