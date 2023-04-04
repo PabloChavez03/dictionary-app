@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './Header.module.css'
 import Dictionary from '../../assets/icons/Dictionary'
-import DividerVertical from '../../assets/icons/DividerVertical'
+import DividerVertical from '../../assets/icons/DividerVertical/DividerVertical'
 import Arrow from '../../assets/icons/Arrow'
 import Moon from '../../assets/icons/Moon'
 import Search from '../../assets/icons/Search'

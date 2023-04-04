@@ -10,7 +10,7 @@ const Search = ({ size = 24 }: Props): JSX.Element => {
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      strokeWidth="1.5"
+      strokeWidth="2"
       stroke="#A349F2"
       fill="none"
       strokeLinecap="round"
