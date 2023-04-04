@@ -1,14 +1,11 @@
-interface Props {
-  size?: number
-}
+import styles from './Play.module.css'
 
-const Play = ({ size = 24 }: Props): JSX.Element => {
+const Play = (): JSX.Element => {
+  const className = `icon icon-tabler icon-tabler-player-play-filled ${styles.playSvg}`
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-player-play-filled"
-      width={size}
-      height={size}
+      className={className}
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke="currentColor"

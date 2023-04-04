@@ -1,5 +1,5 @@
 import styles from './DictionaryDivider.module.css'
-import DividerHorizontal from '../../assets/icons/DividerHorizontal'
+import DividerHorizontal from '../../assets/icons/DividerHorizontal/DividerHorizontal'
 
 const DictionaryDivider = ({ text }: { text?: string }): JSX.Element => {
   return (

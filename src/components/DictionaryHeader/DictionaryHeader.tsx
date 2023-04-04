@@ -1,4 +1,4 @@
-import Play from '../../assets/icons/Play'
+import Play from '../../assets/icons/Play/Play'
 import { type Phonetic, type WordProperties } from '../../types/types'
 import styles from './DictionaryHeader.module.css'
 
@@ -24,7 +24,7 @@ const DictionaryHeader = ({ phonetics, word }: Props): JSX.Element => {
           onClick={handleAudio}
           disabled={phonetics?.audio === undefined}
         >
-          <Play size={32} />
+          <Play />
         </button>
       </div>
     </div>

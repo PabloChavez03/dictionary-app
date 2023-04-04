@@ -53,7 +53,7 @@
     color: var(--purple-color-hard);
     background-color: var(--purple-color-soft);
     border: none;
-    padding: .8rem;
+    padding: .8rem .9rem;
     border-radius: 100%;
     cursor: pointer;
     margin-top: 11px;
