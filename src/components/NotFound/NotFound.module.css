@@ -7,3 +7,16 @@
 .main h1 {
   font-size: 2rem;
 }
+
+@media screen and (max-width: 399px) {
+  .main {
+    margin-top: 2rem;
+    align-items: flex-start;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .main h1 {
+    font-size: 1.5rem;
+  }
+}

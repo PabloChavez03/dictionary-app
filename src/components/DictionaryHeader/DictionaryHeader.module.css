@@ -21,6 +21,9 @@
 }
 
 .playButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--purple-color-hard);
   background-color: var(--purple-color-soft);
   border: none;
@@ -50,23 +53,13 @@
   }
 
   .playButton {
-    color: var(--purple-color-hard);
-    background-color: var(--purple-color-soft);
-    border: none;
-    padding: .8rem .9rem;
-    border-radius: 100%;
-    cursor: pointer;
+    padding: .89rem .89rem;
     margin-top: 11px;
   }
 
   .playButtonDisabled {
-    color: var(--purple-color-hard);
-    background-color: var(--purple-color-soft);
-    border: none;
-    padding: .8rem;
-    border-radius: 100%;
+    padding: .89rem .89rem;
     cursor: pointer;
-    opacity: .4;
     margin-top: 11px;
   }
 }

@@ -79,7 +79,7 @@
   .meaningStyle ul > li {
     list-style-image: url('../../assets/images/circle.svg');
     padding-left: .5rem;
-    font-size: 1.16rem;
+    font-size: 1rem;
     line-height: 1.3rem;
   }
 }
