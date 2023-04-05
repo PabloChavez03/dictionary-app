@@ -25,7 +25,8 @@ __Sus usuarios deberían poder:__
 - [x] Consulte un mensaje de validación de formulario cuando intente enviar un formulario en blanco (con React)
 - [x] Pantalla cuando no se encuentra una palabra.
 - [x] Pantalla cuando hay un error.
-- [ ] Vea el diseño óptimo para la interfaz según el tamaño de pantalla de su dispositivo
+- [x] Vea el diseño óptimo para la interfaz según el tamaño de pantalla de su dispositivo
+- [ ] Hacer un enlace para palabras similares
 - [ ] Vea los estados de desplazamiento y enfoque para todos los elementos interactivos en la página
 - [ ] Bonificación: Elija el esquema de color correcto para ellos en función de sus preferencias informáticas. Sugerencia: Investigación prefers-color-scheme en CSS.
 
