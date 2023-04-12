@@ -1,0 +1,6 @@
+.button {
+  border-radius: 5%;
+  padding: 1rem 3rem;
+  background-color: var(--purple-color-soft);
+  color: currentColor;
+}

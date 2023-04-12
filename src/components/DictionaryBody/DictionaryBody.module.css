@@ -5,6 +5,13 @@
   gap: 3rem;
 }
 
+.dictionaryBody button {
+  padding: 1rem 3rem;
+  background-color: var(--purple-color-soft);
+  color: currentColor;
+  cursor: pointer;
+}
+
 .meaningContainer {
   display: flex;
   flex-direction: column;
