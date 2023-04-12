@@ -13,6 +13,9 @@ const DictionaryBody = ({ meanings }: Props): JSX.Element => {
   const { isDark } = useThemeProvider()
   const [limitByMeaning, setLimitByMeaning] = useState<number>(8)
 
+  // La idea es hacer un local state con los meanings que vienen por props y poder hacer una dependencia entre estados con los limitadores de palabras. Esto me va a permitir poder agregar mas frases e inclusive reiniciar el estado de los limites para mostrar menos.
+  // const [meaningsState, setMeaningsState] = useState(meanings)
+
   const handleClick = (meanings: Definition[]): void => {
     const multiplesOfEight =
       (meanings.length - limitByMeaning) % limitByMeaning === 0 &&
