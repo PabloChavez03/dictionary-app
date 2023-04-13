@@ -43,6 +43,7 @@ const Nouns = ({ nouns }: Props): JSX.Element => {
           ))}
         </ul>
         <button
+          style={{ color: isDark ? 'var(--purple-color-hard)' : 'currentColor', borderColor: isDark ? 'transparent' : 'black' }}
           hidden={isMinEightMeanings}
           onClick={
             limitByMeaning > meaningsByBody.length
@@ -55,13 +56,15 @@ const Nouns = ({ nouns }: Props): JSX.Element => {
         {/* <ShowMore hidden={isMinEightMeanings} changeLimit={setLimitByMeaning} limit={limitByMeaning}/> */}
       </div>
 
-      {nouns.synonyms !== undefined && (
+      {nouns.synonyms?.length !== 0 && (
         <div className={styles.synonymsStyle}>
           <h2 style={{ color: isDark ? '#BFBFBF' : 'rgb(100,100,100)' }}>
             Synonyms
           </h2>
+          <p>
           {nouns.synonyms?.length !== 0 &&
-            nouns.synonyms?.map((sys) => <span key={sys}>{sys}</span>)}
+            nouns.synonyms?.map((sys, i) => <span key={i}>{sys}</span>)}
+          </p>
         </div>
       )}
     </>

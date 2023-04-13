@@ -16,7 +16,9 @@ export function adapterApi (results: WordProperties): WordProperties {
         definition: definition.definition,
         example: definition.example,
         synonyms: definition.synonyms
-      }))
+      })),
+      synonyms: meaning.synonyms,
+      antonyms: meaning.antonyms
     })),
     license: results.license,
     sourceUrls: results.sourceUrls

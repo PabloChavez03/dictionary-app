@@ -13,8 +13,8 @@ const DictionaryBody = ({ meanings }: Props): JSX.Element => {
   return (
     <>
       <div className={styles.dictionaryBody}>
-        <Nouns nouns={NOUNS} />
-        <Verbs verbs={VERBS} />
+        {NOUNS !== undefined && <Nouns nouns={NOUNS} />}
+        {VERBS !== undefined && <Verbs verbs={VERBS} />}
       </div>
     </>
   )

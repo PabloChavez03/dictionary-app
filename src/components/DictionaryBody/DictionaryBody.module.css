@@ -11,6 +11,8 @@
   color: currentColor;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 550;
+  border-radius: .2rem;
 }
 
 .dictionaryBody button:hover {
@@ -53,9 +55,27 @@
   vertical-align: sub;
 }
 
+.defAndArrow {
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.defAndArrow svg {
+  min-width:max-content;
+  padding-left: 1rem;
+  color: var(--purple-color-hard);
+}
+
 .synonymsStyle {
   display: flex;
   gap: 1.5rem;
+}
+
+.synonymsStyle p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .synonymsStyle h2{
