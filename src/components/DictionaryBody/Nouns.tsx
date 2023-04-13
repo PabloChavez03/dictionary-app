@@ -53,7 +53,6 @@ const Nouns = ({ nouns }: Props): JSX.Element => {
         >
           {limitByMeaning > meaningsByBody.length ? 'Show less' : 'Show more'}
         </button>
-        {/* <ShowMore hidden={isMinEightMeanings} changeLimit={setLimitByMeaning} limit={limitByMeaning}/> */}
       </div>
 
       {nouns.synonyms?.length !== 0 && (
