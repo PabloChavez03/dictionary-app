@@ -1,4 +1,4 @@
-# Dictionary App
+# Webictionary
 
 El desafío es construir esta aplicación web del diccionario utilizando el Diccionario API y que se vea lo más cerca posible del diseño.
 
